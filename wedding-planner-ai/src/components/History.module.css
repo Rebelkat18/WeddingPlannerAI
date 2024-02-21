@@ -1,0 +1,11 @@
+.wrapper {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: black;
+  }
+  
+  .wrapper:hover {
+    cursor: pointer;
+    background-color: gray;
+  }
