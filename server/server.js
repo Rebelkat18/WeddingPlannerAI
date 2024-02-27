@@ -10,6 +10,9 @@ app.get('/message', (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
+//call openai chat completions
+
+
 app.listen(8000, () => {
     console.log(`Server is running on port 8000.`);
   });

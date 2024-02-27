@@ -15,54 +15,47 @@ export default function App() {
 
   // const openai = new OpenAI();
 
-  useEffect(() => {
-    fetch("http://localhost:8000/message")
-      .then((res) => res.json())
-      .then((data) => setMessages(data.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/message")
+  //     .then((res) => res.json())
+  //     .then((data) => setMessages(data.message));
+  // }, []);
 
 
-  // const handleSubmit = async () => {
-  //   const prompt = {
-  //     role: "user",
-  //     content: input,
-  //   };
+  const handleSubmit = async () => {
+    const prompt = {
+      role: "user",
+      content: input,
+    };
 
-  //   setMessages([...messages, prompt]);
+    setMessages([...messages, prompt]);
 
-  //   const completion = await openai.chat.completions.create({
-  //     messages: [{ role: "system", content: "You are a helpful assistant." }],
-  //     model: "gpt-3.5-turbo",
-  //   });
-  
-  //   console.log(completion.choices[0]);
-
-  //   await fetch("https://api.openai.com/v1/chat/completions", {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       model: "gpt-3.5-turbo",
-  //       messages: [...messages, prompt],
-  //     }),
-  //   })
-  //     .then((data) => data.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       const res = data.choices[0].message.content;
-  //       setMessages((messages) => [
-  //         ...messages,
-  //         {
-  //           role: "assistant",
-  //           content: res,
-  //         },
-  //       ]);
-  //       setHistory((history) => [...history, { question: input, answer: res }]);
-  //       setInput("");
-  //     });
-  // };
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [...messages, prompt],
+      }),
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data);
+        const res = data.choices[0].message.content;
+        setMessages((messages) => [
+          ...messages,
+          {
+            role: "assistant",
+            content: res,
+          },
+        ]);
+        setHistory((history) => [...history, { question: input, answer: res }]);
+        setInput("");
+      });
+  };
 
   const clear = () => {
     setMessages([]);
@@ -73,17 +66,15 @@ export default function App() {
     <div className="App">
       <div className="Column">
         <h3 className="Title">Chat Messages</h3>
-        <h1>{messages}</h1>
-
         <div className="Content">
-          {/* {messages.map((el, i) => {
+          {messages.map((el, i) => {
             return <Message key={i} role={el.role} content={el.content} />;
-          })} */}
+          })}
         </div>
         <Input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          // onClick={input ? handleSubmit : undefined}
+          onClick={input ? handleSubmit : undefined}
         />
       </div>
       <div className="Column">
