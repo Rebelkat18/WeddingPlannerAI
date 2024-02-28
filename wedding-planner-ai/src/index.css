@@ -1,13 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   /* same on different browsers */
   box-sizing: border-box; 
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Lucida Handwriting', cursive;
 }
 
-body {
-  background-color: black;
+body{
+  background: linear-gradient(
+    180deg,
+    #0094FF 0%,
+    #9BC3FE 100%
+  );
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+header {
+  position: fixed;
+  top: 25px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
 }

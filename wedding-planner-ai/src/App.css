@@ -14,14 +14,14 @@
 
 .Title {
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 10px;
   color: black;
-  background-color: lightblue;
+  background-color: rgb(3, 254, 254);
 }
 
 .Content {
-  height: calc(100vh - 200px);
+  height: calc(80vh - 200px);
   overflow-y: scroll;
   margin-bottom: 20px;
 }

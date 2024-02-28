@@ -1,3 +1,8 @@
-h1{
-    color: white;
+.chatbox{
+    position:fixed;
+    top:125px;
+    left: 1160px;
+    height: 80%;
+    background-color: rgb(184, 231, 247);
+    border-radius: 5%;
 }

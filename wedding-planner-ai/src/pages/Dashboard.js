@@ -1,10 +1,13 @@
 import "./Dashboard.css";
+import Chat from "../pages/Chat.js";
 
 function Dashboard() {
     return (
         <div>
-            <h1>Dashboard</h1>
-            
+            <header>Wedding Planner AI</header>
+            <div className="chatbox">
+                <Chat />
+            </div>
         </div>
     );
 }

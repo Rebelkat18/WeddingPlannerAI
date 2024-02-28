@@ -2,7 +2,8 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    background-color: black;
+    background-color: white;
+    color: black;
   }
   
   .wrapper:hover {
