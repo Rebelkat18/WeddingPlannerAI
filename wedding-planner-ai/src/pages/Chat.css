@@ -1,0 +1,50 @@
+.chat-grid {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 75vh;
+  padding: 30px;
+  background-color: rgb(184, 231, 247);
+  border-radius: 2%;
+  position: fixed;
+  top: 110px;
+  left: 725px;
+
+  /* Large screen */
+  @media screen and (min-width: 1400px) {
+    grid-template-columns: auto 200px;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 80vh;
+    padding: 20px;
+    top: 125px;
+    left: 1200px;
+  }
+}
+
+.Column {
+  color: white;
+}
+
+.Title {
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #0094FF;
+}
+
+.Content {
+  height: calc(75vh - 200px);
+  overflow-y: scroll;
+  margin-bottom: 20px;
+
+  /* Large screens */
+    @media screen and (min-width: 1400px) {
+        height: calc(80vh - 200px);
+    }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import Message from "../components/Message";
 import Input from "../components/Input";
-import History from "../components/History";
-import Clear from "../components/Clear";
+// import History from "../components/History";
+// import Clear from "../components/Clear";
 
 import "./Chat.css";
 
@@ -47,13 +47,13 @@ function Chat() {
       });
   };
 
-  const clear = () => {
-    setMessages([]);
-    setHistory([]);
-  };
+  // const clear = () => {
+  //   setMessages([]);
+  //   setHistory([]);
+  // };
 
   return (
-    <div className="App">
+    <div className="chat-grid">
       <div className="Column">
         <h3 className="Title">Chat Messages</h3>
         <div className="Content">
@@ -67,7 +67,7 @@ function Chat() {
           onClick={input ? handleSubmit : undefined}
         />
       </div>
-      <div className="Column">
+      {/* <div className="Column">
         <h3 className="Title">History</h3>
         <div className="Content">
           {history.map((el, i) => {
@@ -84,9 +84,9 @@ function Chat() {
               />
             );
           })}
-        </div>
-        <Clear onClick={clear} />
-      </div>
+        </div> */}
+        {/* <Clear onClick={clear} />
+      </div> */}
     </div>
   );
 }
