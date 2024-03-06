@@ -28,7 +28,17 @@ function Chat() {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
-        messages: [...messages, prompt],
+        messages: [
+          {
+            role: "system",
+            content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams.",
+          },
+          ...messages,
+          {
+            role: "user",
+            content: input,
+          },
+        ],
       }),
     })
       .then((data) => data.json())
@@ -65,6 +75,9 @@ function Chat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onClick={input ? handleSubmit : undefined}
+          onKeyDown={(e) => (
+            e.keyCode === 13 ? handleSubmit() : null
+          )}
         />
       </div>
       {/* <div className="Column">
