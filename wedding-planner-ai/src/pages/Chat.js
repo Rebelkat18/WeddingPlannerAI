@@ -10,7 +10,7 @@ import "./Chat.css";
 function Chat() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [history, setHistory] = useState([]);
+  // const [history, setHistory] = useState([]);
 
   const handleSubmit = async () => {
     const prompt = {
@@ -52,7 +52,7 @@ function Chat() {
             content: res,
           },
         ]);
-        setHistory((history) => [...history, { question: input, answer: res }]);
+        // setHistory((history) => [...history, { question: input, answer: res }]);
         setInput("");
       });
   };
