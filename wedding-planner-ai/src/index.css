@@ -2,16 +2,16 @@
   margin: 0;
   padding: 0;
   /* same on different browsers */
-  box-sizing: border-box; 
-  font-family: 'Lucida Handwriting', cursive;
+  box-sizing: border-box;
+  font-family: "Lucida Handwriting", cursive;
 }
 
-body{
-  background: linear-gradient(
-    180deg,
-    #0094FF 0%,
-    #9BC3FE 100%
-  );
+h2 {
+  color: white;
+}
+
+body {
+  background: linear-gradient(180deg, #0094ff 0%, #9bc3fe 100%);
   width: 100%;
   height: 100%;
   background-attachment: fixed;
@@ -29,4 +29,8 @@ header {
   @media screen and (min-width: 1400px) {
     font-size: 3rem;
   }
+}
+
+input {
+  color: black;
 }

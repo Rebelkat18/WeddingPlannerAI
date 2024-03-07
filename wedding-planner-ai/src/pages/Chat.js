@@ -31,7 +31,7 @@ function Chat() {
         messages: [
           {
             role: "system",
-            content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams.",
+            content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams. Start with asking their names and wedding date.",
           },
           ...messages,
           {
@@ -98,7 +98,7 @@ function Chat() {
             );
           })}
         </div> */}
-        {/* <Clear onClick={clear} />
+      {/* <Clear onClick={clear} />
       </div> */}
     </div>
   );

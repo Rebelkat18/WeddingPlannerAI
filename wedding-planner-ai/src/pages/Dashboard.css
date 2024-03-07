@@ -7,6 +7,31 @@
   min-height: 80vh;
   padding: 20px;
   position: fixed;
+  top: 120px;
+  left: 125px;
+
+  /* Large screen */
+  @media screen and (min-width: 1400px) {
+    grid-template-columns: 350px 350px;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 20vh;
+    padding: 20px;
+    top: 200px;
+    left: 300px;
+  }
+}
+
+.dash-grid-header {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 80vh;
+  padding: 20px;
+  position: fixed;
   top: 90px;
   left: 125px;
 
@@ -54,4 +79,82 @@
     color: white;
     height: 50px;
     text-align: right;
+}
+
+.checklist{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
+}
+
+.Theme{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
+}
+
+.GuestList{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
+}
+
+.Schedule{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
+}
+
+.Budget{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
+}
+
+.Vendors{
+  color:white;
+  background-color: rgb(184, 231, 247);
+  width: 45%;
+  height: 71%;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+  left: 125px;
+  display:none;
 }
