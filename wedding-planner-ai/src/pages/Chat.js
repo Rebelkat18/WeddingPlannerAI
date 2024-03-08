@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-
 import Message from "../components/Message";
 import Input from "../components/Input";
-// import History from "../components/History";
-// import Clear from "../components/Clear";
+import axios from "axios";
 
 import "./Chat.css";
 
 function Chat() {
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
-  // const [history, setHistory] = useState([]);
+  const [input, setInput] = useState(""); //prompt
+  const [messages, setMessages] = useState([]); //res
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const prompt = {
       role: "user",
       content: input,
@@ -20,46 +19,65 @@ function Chat() {
 
     setMessages([...messages, prompt]);
 
-    await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "system",
-            content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams. Start with asking their names and wedding date.",
-          },
-          ...messages,
-          {
-            role: "user",
-            content: input,
-          },
-        ],
-      }),
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        console.log(data);
-        const res = data.choices[0].message.content;
+    axios.post("http://localhost:8000/chat", { input })
+      .then((res) => {
+        console.log(res);
         setMessages((messages) => [
           ...messages,
           {
             role: "assistant",
-            content: res,
+            content: res.data,
           },
         ]);
-        // setHistory((history) => [...history, { question: input, answer: res }]);
         setInput("");
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
 
-  // const clear = () => {
-  //   setMessages([]);
-  //   setHistory([]);
+  // const handleSubmit = async () => {
+  //   const prompt = {
+  //     role: "user",
+  //     content: input,
+  //   };
+
+  //   setMessages([...messages, prompt]);
+
+  //   await fetch("https://api.openai.com/v1/chat/completions", {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       model: "gpt-3.5-turbo",
+  //       messages: [
+  //         {
+  //           role: "system",
+  //           content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams.",
+  //         },
+  //         ...messages,
+  //         {
+  //           role: "user",
+  //           content: input,
+  //         },
+  //       ],
+  //     }),
+  //   })
+  //     .then((data) => data.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       const res = data.choices[0].message.content;
+  // setMessages((messages) => [
+  //   ...messages,
+  //   {
+  //     role: "assistant",
+  //     content: res,
+  //   },
+  // ]);
+  // setInput("");
+  //     });
   // };
 
   return (
@@ -80,26 +98,6 @@ function Chat() {
           )}
         />
       </div>
-      {/* <div className="Column">
-        <h3 className="Title">History</h3>
-        <div className="Content">
-          {history.map((el, i) => {
-            return (
-              <History
-                key={i}
-                question={el.question}
-                onClick={() =>
-                  setMessages([
-                    { role: "user", content: history[i].question },
-                    { role: "assistant", content: history[i].answer },
-                  ])
-                }
-              />
-            );
-          })}
-        </div> */}
-      {/* <Clear onClick={clear} />
-      </div> */}
     </div>
   );
 }

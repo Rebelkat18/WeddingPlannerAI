@@ -23,7 +23,6 @@ function Welcome(props) {
                     <p>What is your wedding date?</p>
                     {/* calendar input */}
                     <input type="date" onChange={(e) => props.setDate(e.target.value)} />
-                    <h2>{props.date}</h2>
                 </div>
                 <button className="grid-button" onClick={() => nav("/Dashboard/")}>Ready to start planning?</button>
             </div>
