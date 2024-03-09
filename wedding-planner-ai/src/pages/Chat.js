@@ -19,9 +19,8 @@ function Chat() {
 
     setMessages([...messages, prompt]);
 
-    axios.post("http://localhost:8000/chat", { input })
+    axios.post("http://localhost:8000/chat", { messages, prompt })
       .then((res) => {
-        console.log(res);
         setMessages((messages) => [
           ...messages,
           {

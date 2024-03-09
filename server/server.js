@@ -16,8 +16,6 @@ app.use(bodyParser.json());
 
 //call openai chat completions
 app.post('/chat', async (req, res) => {
-    const { messages } = req.body;
-    console.log(messages);
     const data = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
@@ -26,8 +24,13 @@ app.post('/chat', async (req, res) => {
                 content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams.",
             },
             {
+                role: "system",
+                content: "The user's name is Jane and her fiancee is named John. They are getting married in the fall",
+            },
+            ...req.body.messages,
+            {
                 role: "user",
-                content: "I need help planning my wedding.",
+                content: req.body.prompt.content,
             }
         ],
     });
