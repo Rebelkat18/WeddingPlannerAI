@@ -1,14 +1,14 @@
 .welcome-grid {
   display: grid;
-  grid-template-columns: 500px 500px;
-  gap: 20px;
+  grid-template-columns: 350px 350px;
+  gap: 0px;
   max-width: 1000px;
   margin: 0 auto;
   min-height: 60vh;
   padding: 20px;
   position: fixed;
-  top: 175px;
-  left: 7%;
+  top: 215px;
+  left: 20%;
 }
 
 .welcome-item {
@@ -24,13 +24,13 @@
 }
 
 .grid-name{
-    font-size: 0.8rem;
+    font-size: 1rem;
     height: 50px;
     text-align: center;
 }
 
 .grid-date{
-    font-size: 0.8rem;
+    font-size: 1rem;
     height: 50px;
     text-align: center;
 }
@@ -38,14 +38,26 @@
 .grid-button{
     background-color: rgb(0, 148, 255);
     width: 60%;
-    height: 35%;
+    height: 40%;
     margin: 0 auto;
     padding: 0px;
     border-radius: 10px;
     text-align: center;
+    border: none;
+    font-size: 1rem;
+    color: white;
 }
 
 .grid-button:hover {
   background-color: rgb(184, 231, 247);
   transition: 0.5s;
+}
+
+input{
+  border: double;
+  border-color: gray;
+  border-radius: 3px;
+  background-color: rgb(184, 231, 247);
+  color: gray;
+
 }
