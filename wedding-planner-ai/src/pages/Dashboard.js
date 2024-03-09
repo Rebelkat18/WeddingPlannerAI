@@ -94,7 +94,7 @@ function Dashboard(props) {
             </div>
             {/* Chatbox */}
             <div className="chatbox">
-                <Chat />
+                <Chat  name1={props.name1} name2={props.name2} date={props.date}/>
             </div>
         </div>
     );

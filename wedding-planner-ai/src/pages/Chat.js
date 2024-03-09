@@ -5,21 +5,26 @@ import axios from "axios";
 
 import "./Chat.css";
 
-function Chat() {
+function Chat(props) {
   const [input, setInput] = useState(""); //prompt
   const [messages, setMessages] = useState([]); //res
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const prompt = {
       role: "user",
       content: input,
     };
 
+    const name1 = props.name1;
+    console.log(name1);
+    const name2 = props.name2;
+    const date = props.date;
+
     setMessages([...messages, prompt]);
 
-    axios.post("http://localhost:8000/chat", { messages, prompt })
+    axios.post("http://localhost:8000/chat", { messages, prompt, name1, name2, date})
       .then((res) => {
         setMessages((messages) => [
           ...messages,

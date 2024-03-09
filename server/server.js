@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 
 //call openai chat completions
 app.post('/chat', async (req, res) => {
+    console.log(req.body);
+    const name1 = req.body.name1;
+    const name2 = req.body.name2;
+    const date = req.body.date;
     const data = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
@@ -25,7 +29,7 @@ app.post('/chat', async (req, res) => {
             },
             {
                 role: "system",
-                content: "The user's name is Jane and her fiancee is named John. They are getting married in the fall",
+                content: `The user is named ${name1} and her fiance is named ${name2}. They are getting married on ${date}.`,
             },
             ...req.body.messages,
             {
