@@ -7,6 +7,7 @@ import GuestList from "../components/GuestList.js";
 import Schedule from "../components/Schedule.js";
 import Budget from "../components/Budget.js";
 import Vendors from "../components/Vendors.js";
+import axios from "axios";
 
 function Dashboard(props) {
 
@@ -15,10 +16,22 @@ function Dashboard(props) {
         document.querySelector(".checklist").style.display = "block";
     }
 
+    //image in here
     const handleTheme = () => {
         document.querySelector(".dash-grid").style.display = "none";
         document.querySelector(".Theme").style.display = "block";
+
+        // get image from server
+        // axios.post("http://localhost:8000/image", { prompt: "a wedding cake" })
+        //     .then((res) => {
+        //         document.querySelector(".Theme img").src = res.data;
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //     });
     }
+
+
 
     const handleGuestList = () => {
         document.querySelector(".dash-grid").style.display = "none";

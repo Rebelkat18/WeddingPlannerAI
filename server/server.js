@@ -41,6 +41,16 @@ app.post('/chat', async (req, res) => {
     res.send(data.choices[0].message.content);
 });
 
+//call openai image completions
+app.post('/image', async (req, res) => {
+    const response = await openai.images.generate({
+        model: "dall-e-3",
+        prompt: req.body.prompt,
+        // n: 1,
+        // size: "1024x1024",
+    });
+    res.send(response.data[0].url);
+});
 
 app.listen(8000, () => {
     console.log(`Server is running on port 8000.`);
