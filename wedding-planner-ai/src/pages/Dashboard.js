@@ -31,8 +31,6 @@ function Dashboard(props) {
         //     });
     }
 
-
-
     const handleGuestList = () => {
         document.querySelector(".dash-grid").style.display = "none";
         document.querySelector(".GuestList").style.display = "block";

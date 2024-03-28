@@ -4,7 +4,7 @@ function Theme(props){
         <div>
             <h1>Theme</h1>
             <img alt="theme" width="50%" height="50%"/>
-            <button onClick={props.back}>Back</button>
+            <button className="back-button" onClick={props.back}>Back</button>
         </div>
     );
 }

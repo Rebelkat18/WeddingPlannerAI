@@ -39,8 +39,6 @@ function Chat(props) {
         console.error(err);
       });
   };
-
-  // const handleSubmit = async () => {
   //   const prompt = {
   //     role: "user",
   //     content: input,
