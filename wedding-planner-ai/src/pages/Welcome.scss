@@ -1,3 +1,5 @@
+@import "../custom.scss";
+
 .welcome-grid {
   display: grid;
   grid-template-columns: 350px 350px;
@@ -36,7 +38,7 @@
 }
 
 .grid-button{
-    background-color: rgb(0, 148, 255);
+    background-color: $accent;
     width: 60%;
     height: 40%;
     margin: 0 auto;
@@ -45,19 +47,19 @@
     text-align: center;
     border: none;
     font-size: 1rem;
-    color: white;
+    color: $light;
 }
 
 .grid-button:hover {
-  background-color: rgb(184, 231, 247);
+  background-color: $primary;
   transition: 0.5s;
 }
 
 input{
   border: double;
-  border-color: gray;
+  border-color: $dark;
   border-radius: 3px;
-  background-color: rgb(184, 231, 247);
-  color: gray;
+  background-color: $primary;
+  color: $dark;
 
 }

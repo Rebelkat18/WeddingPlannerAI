@@ -1,4 +1,4 @@
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import Chat from "../pages/Chat.js";
 import Grid from "../components/Grid.js";
 import Checklist from "../components/Checklist.js";

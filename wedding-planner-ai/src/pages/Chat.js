@@ -3,7 +3,7 @@ import Message from "../components/Message";
 import Input from "../components/Input";
 import axios from "axios";
 
-import "./Chat.css";
+import "./Chat.scss";
 
 function Chat(props) {
   const [input, setInput] = useState(""); //prompt

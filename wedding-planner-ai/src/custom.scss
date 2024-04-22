@@ -1,0 +1,55 @@
+$primary: rgb(184, 231, 247);
+$secondary: #5ab6f8;
+$success: #28a745;
+$danger: #dc3545;
+$info: #ece141;
+$warning: #ffc107;
+$light: white;
+$dark: #343a40;
+
+$accent: #0094ff;
+
+$body-bg: #0094ff;
+$body-color: $light;
+
+* {
+  margin: 0;
+  padding: 0;
+  /* same on different browsers */
+  box-sizing: border-box;
+  font-family: "Lucida Handwriting", cursive;
+}
+
+body {
+  background: linear-gradient(180deg, $body-bg 0%, $secondary 100%);
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+header {
+  position: fixed;
+  top: 25px;
+  width: 100%;
+  text-align: center;
+  /* color: white; */
+  font-size: 2.5rem;
+
+  /* Large screen */
+  @media screen and (min-width: 1400px) {
+    font-size: 3rem;
+  }
+}
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5vw;
+}
+
+input {
+  color: $dark;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";

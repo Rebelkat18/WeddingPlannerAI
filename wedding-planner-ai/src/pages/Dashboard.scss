@@ -1,3 +1,5 @@
+@import "../custom.scss";
+
 .dash-grid {
   display: grid;
   grid-template-columns: 250px 250px;
@@ -49,8 +51,8 @@
 }
 
 .grid-item {
-  color: white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -64,26 +66,26 @@
 }
 
 .grid-item:hover {
-  background-color: rgb(0, 148, 255);
+  background-color: $secondary;
   transition: 0.5s;
 }
 
 .grid-name{
     font-size: 0.8rem;
-    color: white;
+    color: $light;
     height: 50px;
 }
 
 .grid-date{
     font-size: 0.8rem;
-    color: white;
+    color: $light;
     height: 50px;
     text-align: right;
 }
 
 .checklist{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -95,8 +97,8 @@
 }
 
 .Theme{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -108,8 +110,8 @@
 }
 
 .GuestList{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -121,8 +123,8 @@
 }
 
 .Schedule{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -134,8 +136,8 @@
 }
 
 .Budget{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -147,8 +149,8 @@
 }
 
 .Vendors{
-  color:white;
-  background-color: rgb(184, 231, 247);
+  color: $light;
+  background-color: $primary;
   width: 45%;
   height: 71%;
   border-radius: 10px;
@@ -160,7 +162,7 @@
 }
 
 .back-button{
-  background-color: rgb(0, 148, 255);
+  background-color: $secondary;
   position: relative;
   top: 30px;
   width: 20%;
@@ -168,5 +170,5 @@
   text-align: center;
   border: none;
   font-size: 1.5rem;
-  color: white;
+  color: $light;
 }

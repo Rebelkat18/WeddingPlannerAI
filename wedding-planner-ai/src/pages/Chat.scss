@@ -1,14 +1,15 @@
+@import "../custom.scss";
 .chat-grid {
   width: 450px;
   margin: 0 auto;
   min-height: 75vh;
   padding: 30px;
-  background-color: rgb(184, 231, 247);
+  background-color: $primary;
   border-radius: 2%;
   position: fixed;
   top: 110px;
   left: 725px;
-  color:black;
+  color: $dark;
 
   /* Large screen */
   @media screen and (min-width: 1400px) {
@@ -24,22 +25,22 @@
 }
 
 .Column {
-  color: white;
+  color: $light;
 }
 
 .Title {
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 10px;
-  color: white;
-  background-color: #0094FF;
+  color: $light;
+  background-color: $secondary;
 }
 
 .Content {
   height: calc(75vh - 200px);
   overflow-y: scroll;
   margin-bottom: 20px;
-  color:black;
+  color: $dark;
 
   /* Large screens */
     @media screen and (min-width: 1400px) {
