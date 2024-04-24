@@ -204,6 +204,9 @@ function Dashboard(props) {
         document.querySelector(".Schedule").style.display = "none";
         document.querySelector(".Budget").style.display = "none";
         document.querySelector(".Vendors").style.display = "none";
+
+        props.setPage("home");
+        props.setTopic("wedding planning");
     }
 
     return (

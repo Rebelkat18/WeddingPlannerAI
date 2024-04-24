@@ -14,8 +14,8 @@ function Chat(props) {
     console.log("topic", props.topic)
     if (props.topic === "theme") {
       handleTheme();
-      document.querySelector(".Theme #generated").style.display = "block";
-      document.querySelector(".Theme #placeholder").style.display = "none";
+      // document.querySelector(".Theme #generated").style.display = "block";
+      // document.querySelector(".Theme #placeholder").style.display = "none";
       props.setTopic("wedding planning");
     }
     else if (props.topic === "schedule") {
@@ -65,6 +65,19 @@ function Chat(props) {
       .catch((err) => {
         console.error(err);
       });
+
+      // show spinner
+      spinnerTimer();
+  }
+
+  const spinnerTimer = () => {
+    document.querySelector(".Theme #spinner").style.display = "block";
+    document.querySelector(".Theme #placeholder").style.display = "none";
+
+    setTimeout(() => {
+      document.querySelector(".Theme #generated").style.display = "block";
+      document.querySelector(".Theme .spinner-border").style.display = "none";
+    }, 15000);
   }
 
   const handleSchedule = async (e) => {
