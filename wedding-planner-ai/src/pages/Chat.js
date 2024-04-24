@@ -10,12 +10,8 @@ function Chat(props) {
   const messages = props.messages;
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    console.log("topic", props.topic)
     if (props.topic === "theme") {
       handleTheme();
-      // document.querySelector(".Theme #generated").style.display = "block";
-      // document.querySelector(".Theme #placeholder").style.display = "none";
       props.setTopic("wedding planning");
     }
     else if (props.topic === "schedule") {
@@ -56,8 +52,8 @@ function Chat(props) {
 
   const handleTheme = async (e) => {
     // get image from server
-    console.log("here");
-    axios.post("http://localhost:8000/image", { prompt: input })
+    const prompt = input + " wedding theme";
+    axios.post("http://localhost:8000/image", { prompt: prompt })
       .then((res) => {
         document.querySelector(".Theme #generated").src = res.data;
         console.log(res.data);
