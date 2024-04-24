@@ -10,17 +10,27 @@ function App() {
   const [name1, setName1] = useState("John");
   const [name2, setName2] = useState("Jane");
   const [date, setDate] = useState("01/01/2023");
+  const [page, setPage] = useState("home");
+  const [messages, setMessages] = useState([]);
+  const [topic, setTopic] = useState("wedding planning");
 
   return (
     <Router>
       <Routes>
-        <Route path="/chat" element={<Chat 
-        name1={name1}
-        setName1={setName1}
-        name2={name2}
-        setName2={setName2}
-        date={date}
-        setDate={setDate}/>} />
+        <Route path="/chat" element={<Chat
+          name1={name1}
+          setName1={setName1}
+          name2={name2}
+          setName2={setName2}
+          date={date}
+          setDate={setDate}
+          page={page}
+          setPage={setPage}
+          messages={messages}
+          setMessages={setMessages}
+          topic={topic}
+          setTopic={setTopic}
+        />} />
         <Route path="/" element={<Welcome
           name1={name1}
           setName1={setName1}
@@ -28,6 +38,12 @@ function App() {
           setName2={setName2}
           date={date}
           setDate={setDate}
+          page={page}
+          setPage={setPage}
+          messages={messages}
+          setMessages={setMessages}
+          topic={topic}
+          setTopic={setTopic}
         />} />
         <Route path="/dashboard" element={<Dashboard
           name1={name1}
@@ -35,7 +51,14 @@ function App() {
           name2={name2}
           setName2={setName2}
           date={date}
-          setDate={setDate} />} />
+          setDate={setDate}
+          page={page}
+          setPage={setPage}
+          messages={messages}
+          setMessages={setMessages}
+          topic={topic}
+          setTopic={setTopic}
+        />} />
       </Routes>
     </Router>
   );

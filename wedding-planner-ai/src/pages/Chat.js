@@ -6,11 +6,18 @@ import axios from "axios";
 import "./Chat.scss";
 
 function Chat(props) {
-  const [input, setInput] = useState(""); //prompt
-  const [messages, setMessages] = useState([]); //res
+  const [input, setInput] = useState("");
+  const messages = props.messages;
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
+    console.log("topic", props.topic)
+    if (props.topic === "theme") {
+      handleTheme();
+      document.querySelector(".Theme #generated").style.display = "block";
+      document.querySelector(".Theme #placeholder").style.display = "none";
+      props.setTopic("wedding planning");
+    }
 
     const prompt = {
       role: "user",
@@ -18,15 +25,15 @@ function Chat(props) {
     };
 
     const name1 = props.name1;
-    console.log(name1);
     const name2 = props.name2;
     const date = props.date;
+    const page = props.page;
 
-    setMessages([...messages, prompt]);
+    props.setMessages([...messages, prompt]);
 
-    axios.post("http://localhost:8000/chat", { messages, prompt, name1, name2, date})
+    axios.post("http://localhost:8000/chat", { messages, prompt, name1, name2, date, page })
       .then((res) => {
-        setMessages((messages) => [
+        props.setMessages((messages) => [
           ...messages,
           {
             role: "assistant",
@@ -39,48 +46,19 @@ function Chat(props) {
         console.error(err);
       });
   };
-  //   const prompt = {
-  //     role: "user",
-  //     content: input,
-  //   };
 
-  //   setMessages([...messages, prompt]);
-
-  //   await fetch("https://api.openai.com/v1/chat/completions", {
-  //     method: "POST",
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       model: "gpt-3.5-turbo",
-  //       messages: [
-  //         {
-  //           role: "system",
-  //           content: "Your name is Jill. You are a wedding planner. You do your best to get to know the couple and help them plan the wedding of their dreams.",
-  //         },
-  //         ...messages,
-  //         {
-  //           role: "user",
-  //           content: input,
-  //         },
-  //       ],
-  //     }),
-  //   })
-  //     .then((data) => data.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       const res = data.choices[0].message.content;
-  // setMessages((messages) => [
-  //   ...messages,
-  //   {
-  //     role: "assistant",
-  //     content: res,
-  //   },
-  // ]);
-  // setInput("");
-  //     });
-  // };
+  const handleTheme = async (e) => {
+    // get image from server
+    console.log("here");
+    axios.post("http://localhost:8000/image", { prompt: input })
+      .then((res) => {
+        document.querySelector(".Theme #generated").src = res.data;
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   return (
     <div className="chat-grid">
@@ -88,7 +66,9 @@ function Chat(props) {
         <h3 className="Title">Chat Messages</h3>
         <div className="Content">
           {messages.map((el, i) => {
-            return <Message key={i} role={el.role} content={el.content} />;
+            if (el.role !== "system") {
+              return <Message key={i} role={el.role} content={el.content} />;
+            }
           })}
         </div>
         <Input
