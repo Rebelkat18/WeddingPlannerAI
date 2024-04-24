@@ -3,7 +3,7 @@ import construction from '../icons/construction.png';
 function GuestList(props){
     return(
         <div>
-            <h1>Guest List</h1>
+            <h1 style={{ marginTop: "10px" }} >Guest List</h1>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img id='placeholder' src={construction} alt="theme" width="50%" />
             </div>

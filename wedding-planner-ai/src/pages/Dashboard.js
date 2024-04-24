@@ -238,7 +238,7 @@ function Dashboard(props) {
             </div>
             {/* Schedule */}
             <div className="Schedule">
-                <Schedule back={back} />
+                <Schedule back={back} schedule={props.schedule} />
             </div>
             {/* Budget */}
             <div className="Budget">
@@ -250,7 +250,7 @@ function Dashboard(props) {
             </div>
             {/* Chatbox */}
             <div className="chatbox">
-                <Chat name1={name1} name2={name2} date={date} page={page} messages={messages} setMessages={props.setMessages} setTopic={props.setTopic} topic={props.topic} />
+                <Chat name1={name1} name2={name2} date={date} page={page} messages={messages} setMessages={props.setMessages} setTopic={props.setTopic} topic={props.topic} setSchedule={props.setSchedule}/>
             </div>
         </div>
     );

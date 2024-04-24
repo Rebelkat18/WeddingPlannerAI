@@ -13,6 +13,7 @@ function App() {
   const [page, setPage] = useState("home");
   const [messages, setMessages] = useState([]);
   const [topic, setTopic] = useState("wedding planning");
+  const [schedule, setSchedule] = useState("Coming Soon!");
 
   return (
     <Router>
@@ -30,6 +31,8 @@ function App() {
           setMessages={setMessages}
           topic={topic}
           setTopic={setTopic}
+          schedule={schedule}
+          setSchedule={setSchedule}
         />} />
         <Route path="/" element={<Welcome
           name1={name1}
@@ -44,6 +47,8 @@ function App() {
           setMessages={setMessages}
           topic={topic}
           setTopic={setTopic}
+          schedule={schedule}
+          setSchedule={setSchedule}
         />} />
         <Route path="/dashboard" element={<Dashboard
           name1={name1}
@@ -58,6 +63,8 @@ function App() {
           setMessages={setMessages}
           topic={topic}
           setTopic={setTopic}
+          schedule={schedule}
+          setSchedule={setSchedule}
         />} />
       </Routes>
     </Router>

@@ -3,7 +3,7 @@ import construction from '../icons/construction.png';
 function Budget(props){
     return(
         <div>
-            <h1>Budget</h1>
+            <h1 style={{ marginTop: "10px" }} >Budget</h1>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img id='placeholder' src={construction} alt="theme" width="50%" />
             </div>

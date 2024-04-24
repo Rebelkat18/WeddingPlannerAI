@@ -2,8 +2,8 @@
 .chat-grid {
   width: 450px;
   margin: 0 auto;
-  min-height: 75vh;
-  padding: 30px;
+  max-height: vh;
+  padding: 20px;
   background-color: $primary;
   border-radius: 2%;
   position: fixed;
@@ -29,7 +29,7 @@
 }
 
 .Title {
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   color: $light;
@@ -39,7 +39,7 @@
 .Content {
   height: calc(75vh - 200px);
   overflow-y: scroll;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
   color: $dark;
 
   /* Large screens */

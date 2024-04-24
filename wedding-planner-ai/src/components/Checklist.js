@@ -25,18 +25,19 @@ function Checklist(props) {
 
     return (
         <div>
-            <h1>Checklist</h1>
+            <h1 style={{ marginTop: "10px" }} >Checklist</h1>
             <List
                 sx={{
                     width: '80%',
                     bgcolor: 'white',
                     color: 'black',
                     position: 'relative',
-                    top: '15px',
+                    top: '-5px',
                     left: '10%',
                     height: '50vh',
                     overflow: 'auto',
                     borderRadius: '10px',
+                    marginBottom: '-15px',
                     '& ul': { padding: 0 },
                 }}
                 subheader={<li />}
@@ -44,7 +45,7 @@ function Checklist(props) {
                 {[0, 1, 2, 3, 4].map((sectionId) => (
                     <li key={`section-${sectionId}`}>
                         <ul>
-                            <ListSubheader sx={{bgcolor: '#0094FF' }}>{`I'm sticky ${sectionId}`}</ListSubheader>
+                            <ListSubheader sx={{bgcolor: '#5ab6f8' }}>{`I'm sticky ${sectionId}`}</ListSubheader>
                             {[0, 1, 2, 3].map((value) => {
                                 const labelId = `checkbox-list-label-${value}`;
 
@@ -76,7 +77,7 @@ function Checklist(props) {
                 ))}
 
             </List>
-            <button className="back-button" onClick={props.back}>Back</button>
+            <button style={{ marginTop: "-20px" }} className="back-button" onClick={props.back}>Back</button>
         </div>
     );
 }

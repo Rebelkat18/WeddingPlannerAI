@@ -3,7 +3,7 @@ import construction from '../icons/construction.png';
 function Vendors(props){
     return(
         <div>
-            <h1>Vendors</h1>
+            <h1 style={{ marginTop: "10px" }} >Vendors</h1>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img id='placeholder' src={construction} alt="theme" width="50%" />
             </div>

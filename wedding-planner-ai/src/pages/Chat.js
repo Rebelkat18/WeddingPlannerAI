@@ -18,6 +18,13 @@ function Chat(props) {
       document.querySelector(".Theme #placeholder").style.display = "none";
       props.setTopic("wedding planning");
     }
+    else if (props.topic === "schedule") {
+      handleSchedule();
+      props.setTopic("wedding planning");
+    }
+    else{
+      props.setTopic("wedding planning");
+    }
 
     const prompt = {
       role: "user",
@@ -54,6 +61,25 @@ function Chat(props) {
       .then((res) => {
         document.querySelector(".Theme #generated").src = res.data;
         console.log(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  const handleSchedule = async (e) => {
+    // get text from server
+    const prompt = {
+      role: "user",
+      content: "Generate a day schedule for my wedding. Keep the descriptions short and include the time. 9am to 11pm. Don't add a greeting or closing.",
+    };
+
+    props.setMessages([...messages, prompt]);
+
+    axios.post("http://localhost:8000/chat", { messages, prompt })
+      .then((res) => {
+        props.setSchedule(res.data);
+        setInput("");
       })
       .catch((err) => {
         console.error(err);
