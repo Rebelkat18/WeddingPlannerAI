@@ -21,11 +21,13 @@ In the server directory, create a .env file and add your API key using:
 REACT_APP_OPENAI_API_KEY=your_api_key
 ```
 You can get an API key at [OpenAI](https://platform.openai.com/docs/introduction)
+<br>
+You need to create a system varaible called OPENAI_API_KEY and add your API Key.
 #### Install the needed packages
 Run in your project terminal:
 ```
 cd server
-npm install nodemon openai express body-parser cors
+npm install nodemon openai express cors
 ```
 
 ### Client Side
