@@ -32,6 +32,7 @@ npm install nodemon openai express body-parser cors
 Run in your project terminal:
 ```
 npm install bootstrap react-bootstrap axios react-router-dom @mui/material @emotion/react @emotion/styled
+npm install --save-dev sass
 ```
 
 ## Run Application
