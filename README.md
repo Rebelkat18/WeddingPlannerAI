@@ -24,6 +24,7 @@ You can get an API key at [OpenAI](https://platform.openai.com/docs/introduction
 #### Install the needed packages
 Run in your project terminal:
 ```
+cd server
 npm install nodemon openai express body-parser cors
 ```
 
@@ -31,6 +32,7 @@ npm install nodemon openai express body-parser cors
 #### Install the needed packages
 Run in your project terminal:
 ```
+cd wedding-planner-ai
 npm install bootstrap react-bootstrap axios react-router-dom @mui/material @emotion/react @emotion/styled
 npm install --save-dev sass
 ```
